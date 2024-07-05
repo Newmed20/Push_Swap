@@ -6,14 +6,20 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 02:39:47 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/05 02:40:10 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/05 02:46:24 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
 
-int main()
+int main(int argc , char **argv)
 {
+    int i = 0;
     
+    if (argc>1)
+    {
+    
+    }
+    return (0);
 }
