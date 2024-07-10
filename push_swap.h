@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 02:56:29 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/09 02:22:10 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/10 08:05:22 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,46 @@ typedef struct s_list
 	int				index;
 }					t_list;
 
+
+
+int	ft_atoi(const char *str);
+int ft_strlen(char *str);
+int     check_numbers(char *str);
+int     check_empty(char *str);
+void     check_args(int argc ,char **argv);
+
+char *ft_strjoin(char *str1, char *str2);
+char *to_join(int argc , char **argv);
+void	ft_exit(void);
+void 	is_dupplicated(t_list *stack_A ,int argument);
+void 	ft_creat_stack(char **str , t_list **stack_A);
+
+
+
+
+
+
+
+
+
+
+
+void	ft_exit(void);
+void     check_args(int argc ,char **argv);
+
+
+char	**ft_split(char const *s, char c);
+void	get_free(char **result);
+
+
+t_list	*ft_lstnew(int content);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+
+
+
+
+void	ft_putstr_fd(char *str, int fd);
 
 #endif
