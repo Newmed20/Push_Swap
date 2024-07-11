@@ -6,14 +6,12 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 07:59:08 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/10 08:01:44 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/11 02:11:44 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
-
-
 
 
 char *ft_strjoin(char *str1, char *str2)
