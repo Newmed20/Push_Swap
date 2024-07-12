@@ -6,13 +6,13 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 05:25:50 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/11 02:26:25 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/12 00:18:34 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(int content)
+t_list	*ft_lstnew(int content , int index)
 {
 	t_list	*new;
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int content)
 	if (!new)
 		return (NULL);
 	new->content = content;
+	new->index = index;
 	new->next = NULL;
 	return (new);
 }

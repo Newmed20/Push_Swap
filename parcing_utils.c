@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 07:59:08 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/11 02:11:44 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/12 04:57:07 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void 	ft_creat_stack(char **str , t_list **stack_A)
 	{
 		argument = ft_atoi(str[i]);
 		is_dupplicated(*stack_A , argument);
-		temp = ft_lstnew(argument);
+		temp = ft_lstnew(argument, 0);
 		ft_lstadd_back(stack_A , temp);
 		i++;		
 	} 
