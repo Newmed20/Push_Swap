@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 11:34:49 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/12 02:45:44 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/17 15:32:34 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,21 @@ void 	ft_printstack(t_list *stack_X)
 }
 
 
+
+
 int main(int argc , char **argv)
 {
 	char  **str;
 	t_list *stack_A;
-	t_list *stack_B;
+	t_list *stack_A;
+	t_list *stack_tmp;
 	
 	int i;
 
 	i	= 0;
 	stack_A = NULL;
 	stack_B = NULL;
+	stack_tmp = NULL;
 	
     if(argc ==1 )
 		exit(0);
@@ -46,10 +50,7 @@ int main(int argc , char **argv)
 	str = ft_split( to_join(argc , argv) , ' ');
 	ft_creat_stack(str , &stack_A);
 	ft_printstack(stack_A);
-	// ft_sort(stack_A , stack_B);
-	printf("\n\n");
-	rra(&stack_A);
-	ft_printstack(stack_A);
+	stack_tmp = sort_stack(stack_A , 0 , 0);
 
 	
 }

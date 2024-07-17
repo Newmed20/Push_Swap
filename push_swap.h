@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 02:56:29 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/12 06:23:48 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/17 02:32:30 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,9 @@ void    rra(t_list  **stack_A);
 void    rrb(t_list  **stack_B);
 void    rrr(t_list  **stack_A , t_list  **stack_B);
 
+//SORT
+
+t_list	*sort_stack(t_list *stack_A, int i, int swap);
 
 
 
