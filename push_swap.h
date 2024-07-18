@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 02:56:29 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/17 02:32:30 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/18 00:44:04 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,10 @@ void    rrr(t_list  **stack_A , t_list  **stack_B);
 //SORT
 
 t_list	*sort_stack(t_list *stack_A, int i, int swap);
-
-
+void    ft_sort3(t_list **stack_A);
+int     find_min(t_list   *stack_A);
+int     locate_element(t_list *stack_A , int index);
+void    push_min(t_list   **stak_A , t_list **stack_B);
+void    ft_sort4(t_list **stack_A, t_list  **stack_B);
 
 #endif

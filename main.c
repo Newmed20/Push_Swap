@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 11:34:49 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/17 15:32:34 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/18 00:58:14 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,26 @@ void 	ft_printstack(t_list *stack_X)
 
 
 
+void 	ft_printindex(t_list *stack_X)
+{
+	t_list *temp;
+	
+	temp = stack_X;
+
+	while(temp)
+	{
+		printf("%d  " , temp->index);
+		temp = temp->next;
+	}
+}
+
+
 
 int main(int argc , char **argv)
 {
 	char  **str;
 	t_list *stack_A;
-	t_list *stack_A;
+	t_list *stack_B;
 	t_list *stack_tmp;
 	
 	int i;
@@ -51,6 +65,10 @@ int main(int argc , char **argv)
 	ft_creat_stack(str , &stack_A);
 	ft_printstack(stack_A);
 	stack_tmp = sort_stack(stack_A , 0 , 0);
-
+	printf("\n\n");
+	ft_printstack(stack_tmp);
+	printf("\n\n");
+	ft_printindex(stack_tmp);
+	
 	
 }
