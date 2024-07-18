@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:19:58 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/18 01:01:40 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/18 05:38:08 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,23 @@ t_list	*sort_stack(t_list *stack_A, int i, int swap)
 	return (sorted_stack);
 }
 
-// void    affect_index(t_list  **stackA , t_list *stack_tmp)
-// {
-//     t_list *temp:
-    
-//     temp = stack_tmp;
-//     while(temp!= NULL)
-//     {
-        
-//     }
-// }
+void	affect_index(t_list *stack_A, t_list *stack_tmp)
+{
+	t_list	*tmp;
+
+	tmp = stack_A;
+	while (stack_tmp != NULL)
+	{
+		tmp = stack_A;
+		while (tmp != NULL)
+		{
+			if (stack_tmp->content == tmp->content)
+				tmp->index = stack_tmp->index;
+			tmp = tmp->next;
+		}
+		stack_tmp = stack_tmp->next;
+	}
+}
 
 
 void    ft_sort3(t_list **stack_A)
@@ -62,26 +69,27 @@ void    ft_sort3(t_list **stack_A)
     int c;
     
     temp = *stack_A;
-    a = temp->index;
-    b = temp->next->index;
-    c = temp->next->next->index;
-    if(a>= b && a <=c && b <=c)
+    a = temp->content;
+    b = temp->next->content;
+    c = temp->next->next->content;
+    if(a> b && a <c && b <c)
         sa(stack_A);
-    else if(a>=b && b <=c && a >=c)
+    else if(a>b && b <c && a >c)
         ra(stack_A , (*stack_A)->index);
-    else if(a <=b && b>=c && a >=c)
+    else if(a <b && b>c && a >c)
         rra(stack_A);
-    else if(a<=b && b >=c && a <=c)
+    else if(a<b && b >c && a <c)
     {
-        rra(stack_A);
         sa(stack_A);
+        ra(stack_A , (*stack_A)->index);
     }
-    else if(a>=b && b >=c && a >=c)
+    else if(a>b && b >c && a >c)
     {
-        ra(stack_A , (*stack_A)->index);
         sa(stack_A);
+        rra(stack_A);
     }
 }
+
 
 int     find_min(t_list   *stack_A)
 {
@@ -145,5 +153,12 @@ void    ft_sort4(t_list **stack_A, t_list  **stack_B)
 {
     push_min(stack_A , stack_B);
     ft_sort3(stack_A);
+    pa(stack_A , stack_B);
+}
+
+void    ft_sort5(t_list **stack_A, t_list  **stack_B)
+{
+    push_min(stack_A , stack_B);
+    ft_sort4(stack_A , stack_B);
     pa(stack_A , stack_B);
 }

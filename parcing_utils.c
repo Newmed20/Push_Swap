@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 07:59:08 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/12 04:57:07 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/18 04:37:34 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,5 @@ void 	ft_creat_stack(char **str , t_list **stack_A)
 		temp = ft_lstnew(argument, 0);
 		ft_lstadd_back(stack_A , temp);
 		i++;		
-	} 
+	}
 }
