@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:19:58 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/18 20:45:58 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/18 21:26:59 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,22 @@ int     find_min(t_list   *stack_A)
         temp = temp->next;
     }
     return (min);
+}
+
+int     find_max(t_list   *stack_A)
+{
+    int max;
+    t_list  *temp;
+    
+    temp = stack_A;
+    max = temp->index;
+    while(temp!= NULL)
+    {
+        if(temp->index > max )
+            max = temp->index;
+        temp = temp->next;
+    }
+    return (max);
 }
 
 int     locate_element(t_list *stack_A , int index)

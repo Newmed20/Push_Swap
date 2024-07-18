@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 02:56:29 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/18 20:46:51 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/18 21:20:26 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,19 @@ void    rrr(t_list  **stack_A , t_list  **stack_B);
 t_list	*sort_stack(t_list *stack_A, int i, int swap);
 void    affect_index(t_list  *stackA , t_list *stack_tmp);
 int     find_min(t_list   *stack_A);
+int     find_max(t_list   *stack_A);
 int     locate_element(t_list *stack_A , int index);
 void    push_min(t_list   **stak_A , t_list **stack_B , int size);
 void    ft_sort2(t_list **stack_A);
 void    ft_sort3(t_list **stack_A);
 void    ft_sort4(t_list **stack_A, t_list  **stack_B);
 void    ft_sort5(t_list **stack_A, t_list  **stack_B);
+
+
+
+int	locate_index(int start, int end, t_list *stack_A);
+void	sort_algo1(t_list **stack_A, t_list **stack_B, t_list *stack_tmp, int end);
+void	sort_algo2(t_list **stack_A, t_list **stack_B, int size);
+
 
 #endif
