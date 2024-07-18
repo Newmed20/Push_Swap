@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:19:58 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/18 05:38:08 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/18 07:51:46 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,8 @@ int     locate_element(t_list *stack_A , int index)
     return(-1);
 }
 
+
+
 void    push_min(t_list   **stack_A , t_list **stack_B)
 {
     int center;
@@ -139,11 +141,11 @@ void    push_min(t_list   **stack_A , t_list **stack_B)
         if(locate_element(*stack_A , min) == 0)
         {
             pb(stack_B , stack_A);
-            return;
+            break;
         }
-        if(locate_element(*stack_A , (*stack_A)->index) >= center)
+        if(locate_element(*stack_A , min )>= center)
             rra(stack_A);
-        else
+        else if (locate_element(*stack_A , min ) < center)
             ra(stack_A , min);
     }
     
@@ -160,5 +162,6 @@ void    ft_sort5(t_list **stack_A, t_list  **stack_B)
 {
     push_min(stack_A , stack_B);
     ft_sort4(stack_A , stack_B);
+    pa(stack_A , stack_B);
     pa(stack_A , stack_B);
 }

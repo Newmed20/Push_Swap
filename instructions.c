@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:19:51 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/12 06:20:25 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/18 07:06:49 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,7 +176,7 @@ void    rra(t_list  **stack_A)
     lastone = temp->next;
     temp->next = NULL;
     ft_lstadd_front(stack_A , ft_lstnew(lastone->content , lastone->index));
-    write(1 , "rra\n" , 3);
+    write(1 , "rra\n" , 4);
 }
 
 void    rrb(t_list  **stack_B)
