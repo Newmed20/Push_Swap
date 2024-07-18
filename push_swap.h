@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 02:56:29 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/18 07:52:04 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/18 20:42:48 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void    affect_index(t_list  *stackA , t_list *stack_tmp);
 void    ft_sort3(t_list **stack_A);
 int     find_min(t_list   *stack_A);
 int     locate_element(t_list *stack_A , int index);
-void    push_min(t_list   **stak_A , t_list **stack_B);
+void    push_min(t_list   **stak_A , t_list **stack_B , int size);
 void    ft_sort4(t_list **stack_A, t_list  **stack_B);
 void    ft_sort5(t_list **stack_A, t_list  **stack_B);
 

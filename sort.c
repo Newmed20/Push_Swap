@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:19:58 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/18 07:51:46 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/18 20:42:18 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,14 +127,14 @@ int     locate_element(t_list *stack_A , int index)
 
 
 
-void    push_min(t_list   **stack_A , t_list **stack_B)
+void    push_min(t_list   **stack_A , t_list **stack_B , int size)
 {
     int center;
     int min;
     t_list  *temp;
 
     temp = *stack_A;
-    center = ft_lstsize(*stack_A)/2;
+    center = size/2;
     min= find_min(*stack_A);
     while(temp!= NULL)
     {
@@ -151,17 +151,16 @@ void    push_min(t_list   **stack_A , t_list **stack_B)
     
 }
 
-void    ft_sort4(t_list **stack_A, t_list  **stack_B)
+void    ft_sort4(t_list **stack_A, t_list  **stack_B )
 {
-    push_min(stack_A , stack_B);
+    push_min(stack_A , stack_B , 4);
     ft_sort3(stack_A);
     pa(stack_A , stack_B);
 }
 
 void    ft_sort5(t_list **stack_A, t_list  **stack_B)
 {
-    push_min(stack_A , stack_B);
+    push_min(stack_A , stack_B , 5);
     ft_sort4(stack_A , stack_B);
-    pa(stack_A , stack_B);
     pa(stack_A , stack_B);
 }

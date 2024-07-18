@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 11:34:49 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/18 07:30:59 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/18 20:29:58 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int main(int argc , char **argv)
 	printf("\n\n");
 	ft_printindex(stack_A);
 	printf("\n\n");
-	ft_sort4(&stack_A , &stack_B);
+	ft_sort5(&stack_A , &stack_B);
 	ft_printstack(stack_A);
 	printf("\n\n");
 	ft_printindex(stack_A);
