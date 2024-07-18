@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:19:51 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/18 07:06:49 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/18 20:48:05 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void    sa(t_list   **stack_A)
     int     b;
 
     temp = *stack_A;
-    if(ft_lstsize(*stack_A) == 1 || ft_lstsize(*stack_A) == 2)
+    if(ft_lstsize(*stack_A) == 1)
         return;
     
     a = temp->content;
