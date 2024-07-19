@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = 
 RM = rm -f
 SRCS =	ft_split.c instructions1.c  instuctions2.c   instructions3.c  linked_list_helper.c   parcing_utils.c \
 		parcing.c  sort_utils.c sort_algorithm.c  sort.c  main.c

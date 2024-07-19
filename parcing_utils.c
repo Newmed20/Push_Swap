@@ -17,7 +17,7 @@ char	*ft_strjoin(char *str1, char *str2, int i, int j)
 	char	*str;
 
 	if (str1)
-		i = ft_strlen(str1);
+	i = ft_strlen(str1);
 	j = ft_strlen(str2);
 	str = malloc(i + j + 2);
 	if (!str)
@@ -36,6 +36,8 @@ char	*ft_strjoin(char *str1, char *str2, int i, int j)
 	while (str2[j])
 		str[i++] = str2[j++];
 	str[i] = '\0';
+	free(str2);
+	free(str1);
 	return (str);
 }
 

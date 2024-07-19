@@ -76,6 +76,7 @@ int	main(int argc, char **argv)
 	check_args(argc, argv);
 	str = ft_split(to_join(argv), ' ');
 	ft_creat_stack(str, &stack_a);
+	free(str);
 	stack_tmp = duplicate_linked_list(stack_a);
 	stack_tmp = sort_stack(stack_tmp, 0, 0);
 	affect_index(stack_a, stack_tmp);
