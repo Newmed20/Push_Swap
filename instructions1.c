@@ -6,88 +6,78 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:19:51 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/19 03:27:43 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/19 04:08:03 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
-void    to_swap(int *nb1 , int *nb2)
+void	to_swap(int *nb1, int *nb2)
 {
-    int     temp;
- 
-    temp    = *nb1;
-    *nb1     = *nb2;
-    *nb2    = temp;
-}
-void    sa(t_list   **stack_A)
-{
-    t_list      *temp;
-    int     a;
-    int     b;
+	int	temp;
 
-    temp = *stack_A;
-    if(ft_lstsize(*stack_A) == 1)
-        return;
-    
-    a = temp->content;
-    b = temp->next->content;
-    to_swap(&a,&b);
-    temp->content = a ;
-    temp->next->content = b;
-    write(1 , "sa\n" ,3);
+	temp = *nb1;
+	*nb1 = *nb2;
+	*nb2 = temp;
 }
 
-
-
-void    pa(t_list   **stack_A , t_list **stack_B)
+void	sa(t_list **stack_A)
 {
-    t_list *temp;
-    
+	t_list	*temp;
+	int		a;
+	int		b;
 
-    if(ft_lstsize(*stack_B) == 0)
-        return;
-    temp = *stack_B;
-    ft_lstadd_front(stack_A , ft_lstnew(temp->content , 0));
-    *stack_B = (*stack_B)->next;
-    free(temp);
-    temp = NULL;
-    write(1 , "pa\n" , 3);
+	temp = *stack_A;
+	if (ft_lstsize(*stack_A) == 1)
+		return ;
+	a = temp->content;
+	b = temp->next->content;
+	to_swap(&a, &b);
+	temp->content = a;
+	temp->next->content = b;
+	write(1, "sa\n", 3);
 }
 
-
-void    ra(t_list   **stack_A , int index)
+void	pa(t_list **stack_A, t_list **stack_B)
 {
-    t_list  *temp;
-    
-    if(ft_lstsize(*stack_A) < 2)
-        return;
-    temp = *stack_A;
-    ft_lstadd_back(stack_A,ft_lstnew(temp->content, index));
-    *stack_A = (*stack_A)->next;
-    free(temp);
-    temp = NULL;
-    write(1 , "ra\n" , 3);
+	t_list	*temp;
+
+	if (ft_lstsize(*stack_B) == 0)
+		return ;
+	temp = *stack_B;
+	ft_lstadd_front(stack_A, ft_lstnew(temp->content, 0));
+	*stack_B = (*stack_B)->next;
+	free(temp);
+	temp = NULL;
+	write(1, "pa\n", 3);
 }
 
-
-
-
-void    rra(t_list  **stack_A)
+void	ra(t_list **stack_A, int index)
 {
-    t_list *temp;
-    t_list *lastone;
-    
-    if(ft_lstsize(*stack_A) < 2)
-        return;
-    
-    temp = *stack_A;
-    while(temp->next->next != NULL)
-        temp=temp->next;
-    lastone = temp->next;
-    temp->next = NULL;
-    ft_lstadd_front(stack_A , ft_lstnew(lastone->content , lastone->index));
-    write(1 , "rra\n" , 4);
+	t_list	*temp;
+
+	if (ft_lstsize(*stack_A) < 2)
+		return ;
+	temp = *stack_A;
+	ft_lstadd_back(stack_A, ft_lstnew(temp->content, index));
+	*stack_A = (*stack_A)->next;
+	free(temp);
+	temp = NULL;
+	write(1, "ra\n", 3);
 }
 
+void	rra(t_list **stack_A)
+{
+	t_list	*temp;
+	t_list	*lastone;
+
+	if (ft_lstsize(*stack_A) < 2)
+		return ;
+	temp = *stack_A;
+	while (temp->next->next != NULL)
+		temp = temp->next;
+	lastone = temp->next;
+	temp->next = NULL;
+	ft_lstadd_front(stack_A, ft_lstnew(lastone->content, lastone->index));
+	write(1, "rra\n", 4);
+}

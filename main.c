@@ -6,14 +6,11 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 11:34:49 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/19 03:32:22 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/19 04:44:02 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
-
-
 
 void	push_swap(int size, t_list **stack_A, t_list **stack_B,
 		t_list **stack_tmp)
@@ -37,53 +34,55 @@ void	push_swap(int size, t_list **stack_A, t_list **stack_B,
 		affect_index(*stack_A, *stack_tmp);
 		sort_algo2(stack_A, stack_B, size);
 	}
-}  
+}
 
-int main(int argc , char **argv)
+int	is_sorted(t_list *stack_A)
 {
-	char  **str;
-	t_list *stack_A;
-	t_list *stack_B;
-	t_list *stack_X;
-	t_list *stack_tmp;
-	
-	int i;
+	t_list	*ptr;
+	int		size;
+	int		i;
 
-	i	= 0;
-	stack_A = NULL;
-	stack_B = NULL;
+	ptr = stack_A;
+	size = ft_lstsize(stack_A);
+	i = 0;
+	while (ptr->next != NULL)
+	{
+		if (ptr->index < ptr->next->index)
+			i++;
+		ptr = ptr->next;
+	}
+	if (i == size - 1)
+	{
+		ft_lstclear(&stack_A);
+		return (0);
+	}
+	return (1);
+}
+
+int	main(int argc, char **argv)
+{
+	int		i;
+	char	**str;
+	t_list	*stack_a;
+	t_list	*stack_b;
+	t_list	*stack_tmp;
+
+	i = 0;
+	stack_a = NULL;
+	stack_b = NULL;
 	stack_tmp = NULL;
-	
-    if(argc ==1 )
+	if (argc == 1)
 		exit(0);
-	check_args(argc , argv);
-	str = ft_split( to_join(argc , argv) , ' ');
-	ft_creat_stack(str , &stack_A);
-	stack_tmp = duplicate_linked_list(stack_A);
-	stack_tmp = sort_stack(stack_tmp , 0 ,0);
-	affect_index(stack_A , stack_tmp);
-	ft_printstack(stack_A);
-	printf("\n\n");
-	push_swap(ft_lstsize(stack_A),&stack_A , &stack_B , &stack_tmp);
-	// pb(&stack_B , &stack_A);
-	ft_printstack(stack_A);
-	
-
-	
-	
-	// ft_printindex(stack_A);
-	// printf("\n\n");
-	// ft_sort2(&stack_A);
-	// ft_printstack(stack_A);
-	// printf("\n\n");
-	// ft_printindex(stack_A);
-	// printf("\n\n");
-
-	// ft_printstack(stack_tmp);
-	// printf("\n\n");
-	// ft_printindex(stack_tmp);
-
-	// printf("\n\n");
-	// ft_printindex(stack_tmp);
-
+	check_args(argc, argv);
+	str = ft_split(to_join(argv), ' ');
+	ft_creat_stack(str, &stack_a);
+	stack_tmp = duplicate_linked_list(stack_a);
+	stack_tmp = sort_stack(stack_tmp, 0, 0);
+	affect_index(stack_a, stack_tmp);
+	if (is_sorted(stack_a) == 0)
+		return (1);
+	push_swap(ft_lstsize(stack_a), &stack_a, &stack_b, &stack_tmp);
+	ft_lstclear(&stack_a);
+	ft_lstclear(&stack_b);
+	ft_lstclear(&stack_tmp);
 }

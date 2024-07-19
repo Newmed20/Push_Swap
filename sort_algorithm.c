@@ -6,46 +6,53 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 03:23:43 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/19 03:35:52 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/19 04:16:19 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-t_list* duplicate_linked_list(t_list *head) 
+t_list	*duplicate_linked_list(t_list *head)
 {
-    if (head == NULL) {
-        return NULL;
-    }
+	t_list	*current;
+	t_list	*new_head;
+	t_list	**last_ptr;
+	t_list	*new_node;
 
-    t_list *current = head;
-    t_list *new_head = NULL;
-    t_list *new_tail = NULL;
-
-    while (current != NULL) {
-        t_list *new_node = malloc(sizeof(t_list));
-        if (new_node == NULL)
-			return NULL;
-        new_node->content = current->content;
-        new_node->next = NULL;
-
-        if (new_head == NULL) {
-            new_head = new_node;
-            new_tail = new_node;
-        } else {
-            new_tail->next = new_node;
-            new_tail = new_node;
-        }
-
-        current = current->next;
-    }
-
-    return new_head;
+	if (head == NULL)
+		return (NULL);
+	current = head;
+	new_head = NULL;
+	last_ptr = &new_head;
+	while (current != NULL)
+	{
+		new_node = malloc(sizeof(t_list));
+		if (new_node == NULL)
+			return (NULL);
+		new_node->content = current->content;
+		new_node->next = NULL;
+		*last_ptr = new_node;
+		last_ptr = &new_node->next;
+		current = current->next;
+	}
+	return (new_head);
 }
 
+void	ft_lstclear(t_list **lst)
+{
+	t_list	*ptr;
 
+	if (lst == NULL || *lst == NULL)
+		return ;
+	ptr = *lst;
+	while (ptr != NULL)
+	{
+		ptr = (*lst)->next;
+		free(*lst);
+		*lst = ptr;
+	}
+	lst = NULL;
+}
 
 int	locate_index(int start, int end, t_list *stack_A)
 {
@@ -54,10 +61,11 @@ int	locate_index(int start, int end, t_list *stack_A)
 	else if (stack_A->index < start)
 		return (2);
 	else
-		return 3;
+		return (3);
 }
 
-void	sort_algo1(t_list **stack_A, t_list **stack_B, t_list *stack_tmp, int end)
+void	sort_algo1(t_list **stack_A, t_list **stack_B, t_list *stack_tmp,
+		int end)
 {
 	t_list	*tmp;
 	int		start;
