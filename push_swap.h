@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 02:56:29 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/19 04:39:10 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/19 05:34:15 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void				sb(t_list **stack_B);
 void				ss(t_list **stack_A, t_list **stack_B);
 void				pa(t_list **stack_A, t_list **stack_B);
 void				pb(t_list **stack_B, t_list **stack_A);
-void				ra(t_list **stack_A, int index);
-void				rb(t_list **stack_B, int index);
+void				ra(t_list **stack_A);
+void				rb(t_list **stack_B);
 void				rr(t_list **stack_A, t_list **stack_B);
 void				rra(t_list **stack_A);
 void				rrb(t_list **stack_B);

@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:19:58 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/19 04:19:08 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/19 05:35:56 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	push_min(t_list **stack_A, t_list **stack_B, int size)
 		if (locate_element(*stack_A, min) >= center)
 			rra(stack_A);
 		else if (locate_element(*stack_A, min) < center)
-			ra(stack_A, min);
+			ra(stack_A);
 	}
 }
 
@@ -64,13 +64,13 @@ void	ft_sort3(t_list **stack_A)
 	if (a > b && a < c && b < c)
 		sa(stack_A);
 	else if (a > b && b < c && a > c)
-		ra(stack_A, (*stack_A)->index);
+		ra(stack_A);
 	else if (a < b && b > c && a > c)
 		rra(stack_A);
 	else if (a < b && b > c && a < c)
 	{
 		sa(stack_A);
-		ra(stack_A, (*stack_A)->index);
+		ra(stack_A);
 	}
 	else if (a > b && b > c && a > c)
 	{

@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 03:24:41 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/19 04:38:54 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/19 05:33:58 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ void	sb(t_list **stack_B)
 	to_swap(&a, &b);
 	temp->content = a;
 	temp->next->content = b;
+     a = temp->index;
+    b = temp->next->index;
+    to_swap(&a,&b);
+    temp->index = a ;
+    temp->next->index = b;
 	write(1, "sb\n", 3);
 }
 
@@ -45,14 +50,14 @@ void	pb(t_list **stack_B, t_list **stack_A)
 	write(1, "pb\n", 3);
 }
 
-void	rb(t_list **stack_B, int index)
+void	rb(t_list **stack_B)
 {
 	t_list	*temp;
 
 	if (*stack_B == NULL || (*stack_B)->next == NULL || stack_B == NULL)
 		return ;
 	temp = *stack_B;
-	ft_lstadd_back(stack_B, ft_lstnew(temp->content, index));
+	ft_lstadd_back(stack_B, ft_lstnew(temp->content, temp->index));
 	*stack_B = (*stack_B)->next;
 	free(temp);
 	temp = NULL;

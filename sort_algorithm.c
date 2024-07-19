@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 03:23:43 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/19 04:16:19 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/19 05:35:18 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,12 @@ void	sort_algo1(t_list **stack_A, t_list **stack_B, t_list *stack_tmp,
 		else if (locate_index(start, end, *stack_A) == 2)
 		{
 			pb(stack_B, stack_A);
-			rb(stack_B, (*stack_B)->index);
+			rb(stack_B);
 			start++;
 			end++;
 		}
 		else
-			ra(stack_A, (*stack_A)->index);
+			ra(stack_A);
 		tmp = *stack_A;
 	}
 }
@@ -118,6 +118,6 @@ void	sort_algo2(t_list **stack_A, t_list **stack_B, int size)
 		else if (x > mdl)
 			rrb(stack_B);
 		else if (x <= mdl)
-			rb(stack_B, (*stack_B)->index);
+			rb(stack_B);
 	}
 }
