@@ -6,74 +6,13 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 11:34:49 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/19 03:06:24 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/19 03:32:22 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
 
-
-void 	ft_printstack(t_list *stack_X)
-{
-	t_list *temp;
-	
-	temp = stack_X;
-
-	while(temp)
-	{
-		printf("%d  " , temp->content);
-		temp = temp->next;
-	}
-	printf("\n");
-}
-
-
-
-void 	ft_printindex(t_list *stack_X)
-{
-	t_list *temp;
-	
-	temp = stack_X;
-
-	while(temp)
-	{
-		printf("%d  " , temp->index);
-		temp = temp->next;
-	}
-	printf("\n");
-}
-
-
-t_list* duplicate_linked_list(t_list *head) {
-    if (head == NULL) {
-        return NULL;
-    }
-
-    t_list *current = head;
-    t_list *new_head = NULL;
-    t_list *new_tail = NULL;
-
-    while (current != NULL) {
-        t_list *new_node = malloc(sizeof(t_list));
-        if (new_node == NULL)
-			return NULL;
-        new_node->content = current->content;
-        new_node->next = NULL;
-
-        if (new_head == NULL) {
-            new_head = new_node;
-            new_tail = new_node;
-        } else {
-            new_tail->next = new_node;
-            new_tail = new_node;
-        }
-
-        current = current->next;
-    }
-
-    return new_head;
-}
 
 
 void	push_swap(int size, t_list **stack_A, t_list **stack_B,

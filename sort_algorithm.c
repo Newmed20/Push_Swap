@@ -1,8 +1,51 @@
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_algorithm.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/19 03:23:43 by mjadid            #+#    #+#             */
+/*   Updated: 2024/07/19 03:35:52 by mjadid           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+
+t_list* duplicate_linked_list(t_list *head) 
+{
+    if (head == NULL) {
+        return NULL;
+    }
+
+    t_list *current = head;
+    t_list *new_head = NULL;
+    t_list *new_tail = NULL;
+
+    while (current != NULL) {
+        t_list *new_node = malloc(sizeof(t_list));
+        if (new_node == NULL)
+			return NULL;
+        new_node->content = current->content;
+        new_node->next = NULL;
+
+        if (new_head == NULL) {
+            new_head = new_node;
+            new_tail = new_node;
+        } else {
+            new_tail->next = new_node;
+            new_tail = new_node;
+        }
+
+        current = current->next;
+    }
+
+    return new_head;
+}
+
+
 
 int	locate_index(int start, int end, t_list *stack_A)
 {

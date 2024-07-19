@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 02:56:29 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/19 03:02:49 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/19 03:36:25 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,32 +28,6 @@ typedef struct s_list
 
 
 
-void 	ft_printstack(t_list *stack_X);
-
-
-
-//parcing.c
-
-int	ft_atoi(const char *str);
-int ft_strlen(char *str);
-int     check_numbers(char *str);
-int     check_empty(char *str);
-void     check_args(int argc ,char **argv);
-
-//parcing_utils.c
-char *ft_strjoin(char *str1, char *str2);
-char *to_join(int argc , char **argv);
-void	ft_exit(void);
-void 	is_dupplicated(t_list *stack_A ,int argument);
-void 	ft_creat_stack(char **str , t_list **stack_A);
-
-
-//linked_list_helper.c
-t_list	*ft_lstnew(int content , int index);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-int	ft_lstsize(t_list *lst);
 
 
 //ft_split.c
@@ -74,6 +48,31 @@ void    rra(t_list  **stack_A);
 void    rrb(t_list  **stack_B);
 void    rrr(t_list  **stack_A , t_list  **stack_B);
 
+
+//linked_list_helper.c
+t_list	*ft_lstnew(int content , int index);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int	ft_lstsize(t_list *lst);
+t_list* duplicate_linked_list(t_list *head) ;
+
+
+//parcing.c
+int	ft_atoi(const char *str);
+int ft_strlen(char *str);
+int     check_numbers(char *str);
+int     check_empty(char *str);
+void     check_args(int argc ,char **argv);
+
+//parcing_utils.c
+char *ft_strjoin(char *str1, char *str2);
+char *to_join(int argc , char **argv);
+void	ft_exit(void);
+void 	is_dupplicated(t_list *stack_A ,int argument);
+void 	ft_creat_stack(char **str , t_list **stack_A);
+
+
 //SORT
 
 t_list	*sort_stack(t_list *stack_A, int i, int swap);
@@ -89,9 +88,16 @@ void    ft_sort5(t_list **stack_A, t_list  **stack_B);
 
 
 
+
+//SORT ALGO
 int	locate_index(int start, int end, t_list *stack_A);
 void	sort_algo1(t_list **stack_A, t_list **stack_B, t_list *stack_tmp, int end);
 void	sort_algo2(t_list **stack_A, t_list **stack_B, int size);
 
+
+
+
+//test
+void 	ft_printstack(t_list *stack_X);
 
 #endif
