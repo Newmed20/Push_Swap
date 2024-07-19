@@ -11,7 +11,7 @@ int	locate_index(int start, int end, t_list *stack_A)
 	else if (stack_A->index < start)
 		return (2);
 	else
-		return (3);
+		return 3;
 }
 
 void	sort_algo1(t_list **stack_A, t_list **stack_B, t_list *stack_tmp, int end)
@@ -21,22 +21,22 @@ void	sort_algo1(t_list **stack_A, t_list **stack_B, t_list *stack_tmp, int end)
 
 	tmp = *stack_A;
 	start = stack_tmp->index;
-	while (tmp != NULL)
+	while (tmp != NULL && stack_A && stack_B)
 	{
 		if (locate_index(start, end, *stack_A) == 1)
 		{
-			pb(stack_A, stack_B);
+			pb(stack_B, stack_A);
 			start++;
 			end++;
 		}
 		else if (locate_index(start, end, *stack_A) == 2)
 		{
-			pb(stack_A, stack_B);
+			pb(stack_B, stack_A);
 			rb(stack_B, (*stack_B)->index);
 			start++;
 			end++;
 		}
-		else if (locate_index(start, end, *stack_A) == 3)
+		else
 			ra(stack_A, (*stack_A)->index);
 		tmp = *stack_A;
 	}

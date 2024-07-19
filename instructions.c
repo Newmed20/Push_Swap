@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:19:51 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/18 20:48:05 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/19 03:12:44 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,11 +103,16 @@ void    pb(t_list   **stack_B , t_list **stack_A)
 {
     t_list *temp;
     
-
-    if(ft_lstsize(*stack_A) == 0)
-        return;
+    if (*stack_A == NULL || stack_A == NULL) {
+        printf("null\n");
+		return ;
+    }
+    if(ft_lstsize(*stack_A) == 0){
+            printf("size is 0\n");
+        return ;
+    }
     temp = *stack_A;
-    ft_lstadd_front(stack_B , ft_lstnew(temp->content , 0));
+    ft_lstadd_front(stack_B , ft_lstnew(temp->content , temp->index));
     *stack_A = (*stack_A)->next;
     free(temp);
     temp = NULL;
@@ -130,16 +135,16 @@ void    ra(t_list   **stack_A , int index)
 
 void    rb(t_list   **stack_B , int index)
 {
-    t_list  *temp;
-    
-    if(ft_lstsize(*stack_B) < 2)
-        return;
-    temp = *stack_B;
-    ft_lstadd_back(stack_B,ft_lstnew(temp->content, index));
-    *stack_B = (*stack_B)->next;
-    free(temp);
-    temp = NULL;
-    write(1 , "rb\n" , 3);
+    t_list	*temp;
+
+	if (*stack_B == NULL || (*stack_B)->next == NULL || stack_B == NULL)
+		return ;
+	temp = *stack_B;
+	ft_lstadd_back(stack_B, ft_lstnew(temp->content, index));
+	*stack_B = (*stack_B)->next;
+	free(temp);
+	temp = NULL;
+	write(1 , "rb\n" , 3);
 }
 
 void    rr(t_list  **stack_A , t_list  **stack_B)

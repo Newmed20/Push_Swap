@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 02:56:29 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/18 21:20:26 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/19 03:02:49 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ typedef struct s_list
 	struct s_list	*next;
 	int				index;
 }					t_list;
+
+
+
+
+void 	ft_printstack(t_list *stack_X);
+
 
 
 //parcing.c

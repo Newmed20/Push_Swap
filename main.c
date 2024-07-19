@@ -6,7 +6,7 @@
 /*   By: mjadid <mjadid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 11:34:49 by mjadid            #+#    #+#             */
-/*   Updated: 2024/07/18 21:29:22 by mjadid           ###   ########.fr       */
+/*   Updated: 2024/07/19 03:06:24 by mjadid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void 	ft_printstack(t_list *stack_X)
 		printf("%d  " , temp->content);
 		temp = temp->next;
 	}
+	printf("\n");
 }
 
 
@@ -40,6 +41,7 @@ void 	ft_printindex(t_list *stack_X)
 		printf("%d  " , temp->index);
 		temp = temp->next;
 	}
+	printf("\n");
 }
 
 
@@ -124,9 +126,11 @@ int main(int argc , char **argv)
 	ft_printstack(stack_A);
 	printf("\n\n");
 	push_swap(ft_lstsize(stack_A),&stack_A , &stack_B , &stack_tmp);
+	// pb(&stack_B , &stack_A);
 	ft_printstack(stack_A);
-	printf("\n\n");
+	
 
+	
 	
 	// ft_printindex(stack_A);
 	// printf("\n\n");
